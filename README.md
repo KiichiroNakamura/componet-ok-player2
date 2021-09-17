@@ -1,2 +1,2 @@
-# componet-ok-player2
+# react-draft1
 Created with CodeSandbox

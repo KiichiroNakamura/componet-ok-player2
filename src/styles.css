@@ -1,0 +1,25 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.header {
+  background-color: #ddffff;
+}
+.bodyContent {
+  display: flex;
+}
+.fileList {
+  background-color: #ddff55;
+  width: 200px;
+  height: 600px;
+}
+
+.player {
+  background-color: #dddddd;
+  width: 400px;
+  height: 600px;
+}
+
+.list-row {
+  display: flex;
+}
