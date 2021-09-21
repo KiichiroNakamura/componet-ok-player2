@@ -7,11 +7,12 @@ export const MoviePlayer = () => {
   const [player, setPlayer] = useState(null);
   const [mediaSrc, setMediaSrc] = useState(
     // "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-    "https://dl8.webmfiles.org/big-buck-bunny_trailer.webm"
+    // "https://dl8.webmfiles.org/big-buck-bunny_trailer.webm"
+    "videos/file_example_MP4_480_1_5MG.mp4"
   );
   const [mediaType, setMediaType] = useState(
-    //   "video/mp4"
-    "video/webm"
+    "video/mp4"
+    //"video/webm"
   );
   // setPlayer(Player);
   return (
