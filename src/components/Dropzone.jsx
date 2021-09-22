@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import { MoviePlayer } from "./MoviePlayer.jsx";
 import styled from "styled-components";
 
 const style = {
@@ -10,6 +11,7 @@ const style = {
 };
 export const Dropzone = () => {
   const [fileList, setFileList] = useState([]);
+  const [videoUrl, setVideoUrl] = useState(null);
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
     console.log("acceptedFiles:", acceptedFiles);
@@ -18,9 +20,18 @@ export const Dropzone = () => {
     setFileList(newList);
     console.log(fileList);
   }, []);
+  const onClickPlay = (files) => {
+    console.log(files[0]);
+    // onDropAccepted: (files) => {
+    console.log(files);
+    const url = (window.URL || window.webkitURL).createObjectURL(files[0]);
+    alert(url);
+    setVideoUrl(url);
+    // };
+  };
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
   return (
-    <>
+    <div>
       <div {...getRootProps()} style={style}>
         <input {...getInputProps()} />
         {isDragActive ? (
@@ -31,12 +42,16 @@ export const Dropzone = () => {
       </div>
       <Sdiv>
         <ul>
-          {fileList.map((fileName) => (
-            <li key={fileName.name}>{fileName.name}</li>
+          {fileList.map((file) => (
+            <li key={file.name}>
+              {file.name}
+              <button onClick={() => onClickPlay(fileList)}>aaa</button>
+            </li>
           ))}
         </ul>
       </Sdiv>
-    </>
+      <MoviePlayer url={videoUrl} />
+    </div>
   );
 };
 const Sdiv = styled.div({

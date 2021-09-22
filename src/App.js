@@ -20,7 +20,7 @@ export default function App() {
         <div ClassName="sideArea">
           <Dropzone />
         </div>
-        <MoviePlayer />
+        {/* <MoviePlayer /> */}
       </div>
     </div>
   );
