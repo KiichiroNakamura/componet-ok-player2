@@ -1,6 +1,7 @@
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { MoviePlayer } from "./MoviePlayer.jsx";
+// import { MoviePlayer } from "./MoviePlayer.jsx";
+import { MoviePlayer2 } from "./MoviePlayer2"
 import styled from "styled-components";
 
 const style = {
@@ -19,7 +20,7 @@ export const Dropzone = () => {
     console.log(newList);
     setFileList(newList);
     console.log(fileList);
-  }, []);
+  }, );
   const onClickPlay = (files) => {
     console.log(files[0]);
     // onDropAccepted: (files) => {
@@ -50,7 +51,7 @@ export const Dropzone = () => {
           ))}
         </ul>
       </Sdiv>
-      <MoviePlayer url={videoUrl} />
+      <MoviePlayer2 url={videoUrl} />
     </div>
   );
 };
